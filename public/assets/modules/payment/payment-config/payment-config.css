@@ -1,0 +1,43 @@
+.theme-input-style {
+    display: block;
+    inline-size: 100%;
+    padding: 0.5rem 0.625rem;
+    line-height: 1.5;
+    color: var(--title-color);
+    background-color: var(--white-color);
+    background-clip: padding-box;
+    border: 1px solid var(--border-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.3125rem;
+    transition: border-color 0.15s ease-in-out;
+    block-size: 2.8125rem;
+  }
+
+  .theme-input-style:focus, .theme-input-style:active {
+    border-color: var(--input-border-color-active);
+  }
+
+  .input-group > .theme-input-style {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+  }
+
+.textarea.form-control,
+.textarea.theme-input-style {
+  block-size: 5rem;
+}
+
+.mt-30 {
+    -webkit-margin-before: 1.875rem;
+    margin-block-start: 1.875rem;
+  }
+
+.mb-30 {
+-webkit-margin-after: 1.875rem;
+margin-block-end: 1.875rem;
+}
+

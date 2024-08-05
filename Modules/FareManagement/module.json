@@ -1,0 +1,13 @@
+{
+    "name": "FareManagement",
+    "alias": "faremanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\FareManagement\\Providers\\FareManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

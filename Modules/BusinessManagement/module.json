@@ -1,0 +1,13 @@
+{
+    "name": "BusinessManagement",
+    "alias": "businessmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BusinessManagement\\Providers\\BusinessManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/Gateways",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Gateways\\": ""
+        },
+        "files": [
+            "Modules/Gateways/Library/Constant.php",
+            "Modules/Gateways/Library/Responses.php"
+        ]
+    },
+    "require": {
+        "stripe/stripe-php": "^10.10",
+      "ext-simplexml": "*"
+    }
+}

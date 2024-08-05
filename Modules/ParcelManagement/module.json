@@ -1,0 +1,13 @@
+{
+    "name": "ParcelManagement",
+    "alias": "parcelmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ParcelManagement\\Providers\\ParcelManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

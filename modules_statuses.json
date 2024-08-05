@@ -1,0 +1,16 @@
+{
+    "AdminModule": true,
+    "UserManagement": true,
+    "FareManagement": true,
+    "ZoneManagement": true,
+    "VehicleManagement": true,
+    "PromotionManagement": true,
+    "BusinessManagement": true,
+    "AuthManagement": true,
+    "ParcelManagement": true,
+    "TripManagement": true,
+    "ChattingManagement": true,
+    "ReviewModule": true,
+    "Gateways": true,
+    "TransactionManagement": true
+}

@@ -1,0 +1,104 @@
+[28-Jul-2024 12:59:02 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/composer/../../Modules/ZoneManagement/Lib/Zone.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 12:59:02 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../../Modules/ZoneManagement/Lib/Zone.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:21 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/symfony/polyfill-intl-normalizer/bootstrap.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:21 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../symfony/polyfill-intl-normalizer/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:26 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/guzzlehttp/guzzle/src/functions_include.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:26 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../guzzlehttp/guzzle/src/functions_include.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:35 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:35 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../laravel/framework/src/Illuminate/Collections/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:36 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:36 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../laravel/framework/src/Illuminate/Collections/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:41 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:41 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../laravel/framework/src/Illuminate/Collections/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:41 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:41 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../laravel/framework/src/Illuminate/Collections/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:51 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/react/async/src/functions_include.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:51 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../react/async/src/functions_include.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:56 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/react/async/src/functions_include.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../react/async/src/functions_include.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:56 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/react/async/src/functions_include.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:10:56 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../react/async/src/functions_include.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:39
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(43): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 39
+[28-Jul-2024 23:13:50 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/spatie/flare-client-php/src/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41
+[28-Jul-2024 23:13:50 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../spatie/flare-client-php/src/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41
+[28-Jul-2024 23:13:51 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/spatie/flare-client-php/src/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41
+[28-Jul-2024 23:13:51 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../spatie/flare-client-php/src/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41
+[28-Jul-2024 23:13:51 Asia/Kolkata] PHP Warning:  require(/home/bibekgup/aayorides.com/vendor/spatie/flare-client-php/src/helpers.php): Failed to open stream: No such file or directory in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41
+[28-Jul-2024 23:13:51 Asia/Kolkata] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bibekgup/aayorides.com/vendor/composer/../spatie/flare-client-php/src/helpers.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bibekgup/aayorides.com/vendor/autoload.php(25): ComposerAutoloaderInit92d0a75edccdac6853edb5f4e876386d::getLoader()
+#2 /home/bibekgup/aayorides.com/index.php(34): require('/home/bibekgup/...')
+#3 {main}
+  thrown in /home/bibekgup/aayorides.com/vendor/composer/autoload_real.php on line 41

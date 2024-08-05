@@ -1,0 +1,282 @@
+@extends('adminmodule::layouts.master')
+
+@section('title', translate('Driver_List'))
+
+@section('content')
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            @can('user_view')
+                <div class="d-flex justify-content-between gap-3 align-items-center mb-4">
+                    <h2 class="fs-22">
+                        {{ translate('driver_Analytical_Data') }}
+                    </h2>
+                    <div>
+                        <select class="js-select driver-statistics">
+                            <option value="all_time" selected>{{ translate('all_time') }} </option>
+                            <option value="today">{{ translate('today') }} </option>
+                            <option value="this_week">{{ translate('this_week') }} </option>
+                            <option value="this_month">{{ translate('this_month') }} </option>
+                            <option value="this_year">{{ translate('This_Year') }} </option>
+                        </select>
+                    </div>
+                </div>
+                <div id="statistics">
+                </div>
+            @endcan
+            <h2 class="fs-22 mt-4 text-capitalize">{{ translate('driver_list') }}</h2>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center my-3 gap-3">
+                        <ul class="nav nav--tabs p-1 rounded bg-white" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a href="{{ url()->current() }}?status=all"
+                                   class="nav-link {{ !request()->has('status') || request()->get('status') =='all'? 'active' : '' }}">{{ translate('all') }}</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="{{ url()->current() }}?status=active"
+                                   class="nav-link {{ request()->get('status') =='active' ? 'active' : '' }}">{{ translate('active') }}</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a href="{{ url()->current() }}?status=inactive"
+                                   class="nav-link {{ request()->get('status') =='inactive' ? 'active' : '' }}">{{ translate('inactive') }}</a>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="text-muted">{{ translate('total_driver') }} : </span>
+                            <span class="text-primary fs-16 fw-bold"
+                                  id="total_record_count">{{ $drivers->total() }}</span>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="driver_all" role="tabpanel">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-top d-flex flex-wrap gap-10 justify-content-between">
+                                        <form action="javascript:;" method="GET"
+                                              class="search-form search-form_style-two">
+                                            <div class="input-group search-form__input_group">
+                                                <span class="search-form__icon">
+                                                    <i class="bi bi-search"></i>
+                                                </span>
+                                                <input type="search" name="search"
+                                                       value="{{ request()->get('search') }}"
+                                                       id="search" class="theme-input-style search-form__input"
+                                                       placeholder="{{ translate('search_here_by_name') }}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary search-submit"
+                                                    data-url="{{ url()->full() }}">{{ translate('search') }}</button>
+                                        </form>
+
+                                        <div class="d-flex flex-wrap gap-3">
+                                            @can('super-admin')
+                                                <a href="{{ route('admin.driver.index', ['status' => request('status')]) }}"
+                                                   class="btn btn-outline-primary px-3" data-bs-toggle="tooltip"
+                                                   data-bs-title="{{ translate('refresh') }}">
+                                                    <i class="bi bi-arrow-repeat"></i>
+                                                </a>
+
+                                                <a href="{{ route('admin.driver.trash') }}"
+                                                   class="btn btn-outline-primary px-3" data-bs-toggle="tooltip"
+                                                   data-bs-title="{{ translate('manage_Trashed_Data') }}">
+                                                    <i class="bi bi-recycle"></i>
+                                                </a>
+                                            @endcan
+                                            @can('user_log')
+                                                <a href="{{ route('admin.driver.log') }}"
+                                                   class="btn btn-outline-primary px-3" data-bs-toggle="tooltip"
+                                                   data-bs-title="{{ translate('view_Log') }}">
+                                                    <i class="bi bi-clock-fill"></i>
+                                                </a>
+                                            @endcan
+                                            @can('user_export')
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-outline-primary"
+                                                            data-bs-toggle="dropdown">
+                                                        <i class="bi bi-download"></i>
+                                                        {{ translate('download') }}
+                                                        <i class="bi bi-caret-down-fill"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                                        <li><a class="dropdown-item"
+                                                               href="{{ route('admin.driver.export') }}?status={{ request()->get('status') ?? "all" }}&file=excel">{{ translate('excel') }}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            @endcan
+                                            @can('user_add')
+                                                <a href="{{ route('admin.driver.create') }}" type="button"
+                                                   class="btn btn-primary text-capitalize">
+                                                    <i class="bi bi-plus fs-16"></i> {{ translate('add_driver') }}
+                                                </a>
+                                            @endcan
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-borderless align-middle table-hover">
+                                            <thead class="table-light align-middle text-capitalize">
+                                            <tr>
+                                                <th>{{ translate('SL') }}</th>
+                                                <th class="name">{{ translate('name') }}</th>
+                                                <th class="contact-info">{{ translate('contact_info') }}</th>
+                                                <th class="profile-status">{{ translate('profile_status') }}</th>
+                                                <th class="level">{{ translate('level') }}</th>
+                                                <th class="total-trip">{{ translate('total_trip') }}</th>
+                                                <th class="earning">{{ translate('earning') }}</th>
+                                                @can('user_edit')
+                                                    <th class="status">{{ translate('status') }}</th>
+                                                @endcan
+                                                <th class="text-center action">{{ translate('action') }}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @forelse($drivers as $key => $driver)
+                                                <tr id="hide-row-{{ $driver->id }}" class="record-row">
+                                                    <td>{{ $key + $drivers->firstItem() }}</td>
+                                                    <td class="name">
+                                                        <a href="{{ route('admin.driver.show', ['id' => $driver->id]) }}"
+                                                           class="media align-items-center gap-10">
+                                                            <img loading="lazy"
+                                                                 src="{{ onErrorImage(
+                                                                        $driver?->profile_image,
+                                                                        asset('storage/app/public/driver/profile') . '/' . $driver?->profile_image,
+                                                                        asset('public/assets/admin-module/img/avatar/avatar.png'),
+                                                                        'driver/profile/',
+                                                                    ) }}"
+                                                                 class="rounded custom-box-size" alt=""
+                                                                 style="--size: 20px">
+                                                            <div class="media-body">{{ $driver?->first_name }}
+                                                                {{ $driver?->last_name }}</div>
+                                                        </a>
+                                                    </td>
+                                                    <td class="contact-info">
+                                                        <div class="title-color"><a
+                                                                href="tel:{{ $driver->phone }}">{{ $driver->phone }}</a>
+                                                        </div>
+                                                        <div><a
+                                                                href="mailto:{{ $driver->email }}">{{ $driver->email }}</a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="profile-status">{{ $driver->completion_percent }}%</td>
+                                                    <td class="level">{{ $driver->level?->name }}</td>
+                                                    <td class="total-trip">{{ $driver->driverTrips->count() }}</td>
+                                                    <td>
+                                                        {{ set_currency_symbol($driver->userAccount->received_balance + $driver->userAccount->total_withdrawn) }}
+                                                    </td>
+                                                    @can('user_edit')
+                                                        <td class="status">
+                                                            <label class="switcher">
+                                                                <input class="switcher_input status-change"
+                                                                       type="checkbox"
+                                                                       {{ $driver->is_active == 1 ? 'checked' : '' }}
+                                                                       data-url="{{ route('admin.driver.update-status') }}"
+                                                                       id="{{ $driver->id }}">
+                                                                <span class="switcher_control"></span>
+                                                            </label>
+                                                        </td>
+                                                    @endcan
+                                                    <td class="action">
+                                                        <div
+                                                            class="d-flex justify-content-center gap-2 align-items-center">
+                                                            @can('user_log')
+                                                                <a type="button"
+                                                                   class="btn btn-outline-primary btn-action"
+                                                                   href="{{ route('admin.driver.log') }}?id={{ $driver->id }}">
+                                                                    <i class="bi bi-clock-fill"></i>
+                                                                </a>
+                                                            @endcan
+                                                            @can('user_edit')
+                                                                <a href="{{ route('admin.driver.edit', ['id' => $driver->id]) }}"
+                                                                   class="btn btn-outline-success btn-action">
+                                                                    <i class="bi bi-pen"></i>
+                                                                </a>
+                                                            @endcan
+                                                            @can('user_view')
+                                                                <a href="{{ route('admin.driver.show', ['id' => $driver->id]) }}"
+                                                                   class="btn btn-outline-info btn-action">
+                                                                    <i class="bi bi-eye-fill"></i>
+                                                                </a>
+                                                            @endcan
+                                                            @can('user_delete')
+                                                                    @if(count($driver->getDriverLastTrip())!=0|| $driver?->userAccount->payable_balance>0 || $driver?->userAccount->pending_balance>0 || $driver?->userAccount->receivable_balance>0)
+                                                                            <button data-id="delete-{{ $driver->id }}"
+                                                                                    data-message="{{ translate("Sorry you can't delete this driver, because there are ongoing rides or payment due this driver.?") }}"
+                                                                                    type="button"
+                                                                                    class="btn btn-outline-danger btn-action form-alert-warning">
+                                                                                <i class="bi bi-trash-fill"></i>
+                                                                            </button>
+                                                                        @else
+                                                                        <button data-id="delete-{{ $driver->id }}"
+                                                                                data-message="{{ translate('want_to_delete_this_driver?') }}"
+                                                                                data-type="driver"
+                                                                                type="button"
+                                                                                class="btn btn-outline-danger btn-action form-alert">
+                                                                            <i class="bi bi-trash-fill"></i>
+                                                                        </button>
+                                                                        <form
+                                                                            action="{{ route('admin.driver.delete', ['id' => $driver->id]) }}"
+                                                                            method="post" id="delete-{{ $driver->id }}">
+                                                                            @csrf
+                                                                            @method('delete')
+                                                                        </form>
+                                                                    @endif
+                                                            @endcan
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <tr>
+                                                    <td colspan="14">
+                                                        <div
+                                                            class="d-flex flex-column justify-content-center align-items-center gap-2 py-3">
+                                                            <img
+                                                                src="{{ asset('public/assets/admin-module/img/empty-icons/no-data-found.svg') }}"
+                                                                alt="" width="100">
+                                                            <p class="text-center">{{translate('no_data_available')}}</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div
+                                        class="table-bottom d-flex flex-column flex-sm-row justify-content-sm-between align-items-center gap-2">
+                                        <p class="mb-0"></p>
+
+                                        <div
+                                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-end gap-3 gap-sm-4">
+                                            <div class="d-flex align-items-center gap-1">
+                                            </div>
+                                            {!! $drivers->links() !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content -->
+
+@endsection
+
+@push('script')
+    <script>
+        "use strict";
+
+        $(".driver-statistics").on('change', function () {
+            let data = $(this).val();
+            loadPartialView('{{ route('admin.driver.statistics') }}?date_range=' + data, '#statistics')
+        })
+        loadPartialView('{{ route('admin.driver.statistics') }}?date_range=all_time', '#statistics')
+    </script>
+@endpush

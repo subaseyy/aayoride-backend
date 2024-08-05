@@ -1,0 +1,13 @@
+{
+    "name": "TripManagement",
+    "alias": "tripmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TripManagement\\Providers\\TripManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

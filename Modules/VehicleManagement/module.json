@@ -1,0 +1,13 @@
+{
+    "name": "VehicleManagement",
+    "alias": "vehiclemanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\VehicleManagement\\Providers\\VehicleManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

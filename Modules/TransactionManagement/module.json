@@ -1,0 +1,13 @@
+{
+    "name": "TransactionManagement",
+    "alias": "transactionmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TransactionManagement\\Providers\\TransactionManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

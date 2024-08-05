@@ -1,0 +1,13 @@
+{
+    "name": "ChattingManagement",
+    "alias": "chattingmanagement",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ChattingManagement\\Providers\\ChattingManagementServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
