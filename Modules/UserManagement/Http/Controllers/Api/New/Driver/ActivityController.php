@@ -23,26 +23,6 @@ class ActivityController extends Controller
         $this->tripRequestService = $tripRequestService;
     }
 
-    // public function leaderboard(Request $request): JsonResponse
-    // {
-    //     $validator = Validator::make($request->all(), [
-    //         'filter' => 'required',
-    //         'limit' => 'required|numeric',
-    //         'offset' => 'required|numeric'
-    //     ]);
-
-    //     if ($validator->fails()) {
-
-    //         return response()->json(responseFormatter(constant: DEFAULT_400, errors: errorProcessor($validator)), 400);
-    //     }
-    //     $request->merge(['user_type' => DRIVER]);
-    //     $request->merge(['data' => $request->filter]);
-    //     $leadDriver = $this->tripRequestService->getLeaderBoard(data: $request->all(),limit: $request->limit,offset: $request->offset);
-    //     $leadDriver = DriverLeaderBoardResourse::collection($leadDriver);
-    //     return response()->json(responseFormatter(constant: DEFAULT_200, content: $leadDriver, limit: $request->limit, offset: $request->offset));
-    // }
-
-    // New leaderboard 
     public function leaderboard(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
@@ -52,26 +32,17 @@ class ActivityController extends Controller
         ]);
 
         if ($validator->fails()) {
+
             return response()->json(responseFormatter(constant: DEFAULT_400, errors: errorProcessor($validator)), 400);
         }
-
         $request->merge(['user_type' => DRIVER]);
         $request->merge(['data' => $request->filter]);
-        $leadDriver = $this->tripRequestService->getLeaderBoard(data: $request->all(), limit: $request->limit, offset: $request->offset);
-        
-        // Process the data to modify total_income and total_records
-        $leadDriver = $leadDriver->map(function ($item) {
-            $item->total_income = $item->income; // Use income directly as total_income
-            $item->commission = $item->commission; // Ensure commission is present
-            $item->total_records = $item->accepted_rides; // Include only accepted rides
-            return $item;
-        });
-
+        $leadDriver = $this->tripRequestService->getLeaderBoard(data: $request->all(),limit: $request->limit,offset: $request->offset);
         $leadDriver = DriverLeaderBoardResourse::collection($leadDriver);
         return response()->json(responseFormatter(constant: DEFAULT_200, content: $leadDriver, limit: $request->limit, offset: $request->offset));
     }
 
-
+    
     /**
      * @return JsonResponse
      */
