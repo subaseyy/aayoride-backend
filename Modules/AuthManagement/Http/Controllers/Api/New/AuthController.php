@@ -343,7 +343,7 @@ class AuthController extends Controller
                 $res = $client->request('GET', 'https://graph.facebook.com/' . $unique_id . '?access_token=' . $token . '&&fields=name,email');
             }
             $data = json_decode($res->getBody()->getContents(), true);
-        } catch (Exception $exception) {
+        } catch (\Exception $exception) {
             return response()->json(responseFormatter(DEFAULT_401), 403);
         }
 

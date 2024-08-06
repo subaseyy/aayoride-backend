@@ -69,19 +69,19 @@ class CouponSetupController extends BaseController
     {
         $this->authorize('promotion_add');
         if ($request->user_id == 'Select customer' && $request->user_level_id) {
-            Toastr::error('please select customer or user level');
+            Toastr()->error('please select customer or user level');
             return back();
         }
         if ($request->coupon_rules == 'area_wise' && !($request->areas)) {
-            Toastr::error(DEFAULT_FAIL_200['message']);
+            Toastr()->error(DEFAULT_FAIL_200['message']);
             return redirect()->back();
         }
         if ($request->coupon_rules == 'vehicle_category_wise' && !($request->categories)) {
-            Toastr::error(DEFAULT_FAIL_200['message']);
+            Toastr()->error(DEFAULT_FAIL_200['message']);
             return redirect()->back();
         }
         $this->couponSetupService->create(data: $request->validated());
-        Toastr::success(COUPON_STORE_200['message']);
+        Toastr()->success(COUPON_STORE_200['message']);
         return redirect()->route('admin.promotion.coupon-setup.index');
     }
 
@@ -97,7 +97,7 @@ class CouponSetupController extends BaseController
     {
         $this->authorize('promotion_edit');
         $this->couponSetupService->update(id: $id, data: $request->validated());
-        Toastr::success(COUPON_UPDATE_200['message']);
+        Toastr()->success(COUPON_UPDATE_200['message']);
         return redirect()->route('admin.promotion.coupon-setup.index');
     }
 
@@ -105,7 +105,7 @@ class CouponSetupController extends BaseController
     {
         $this->authorize('promotion_view');
         $this->couponSetupService->delete(id: $id);
-        Toastr::success(COUPON_DESTROY_200['message']);
+        Toastr()->success(COUPON_DESTROY_200['message']);
         return back();
     }
 
@@ -187,7 +187,7 @@ class CouponSetupController extends BaseController
     {
         $this->authorize('super-admin');
         $this->couponSetupService->restoreData($id);
-        Toastr::success(DEFAULT_RESTORE_200['message']);
+        Toastr()->success(DEFAULT_RESTORE_200['message']);
         return redirect()->route('admin.promotion.coupon-setup.index');
     }
 
@@ -195,7 +195,7 @@ class CouponSetupController extends BaseController
     {
         $this->authorize('super-admin');
         $this->couponSetupService->permanentDelete(id: $id);
-        Toastr::success(COUPON_DESTROY_200['message']);
+        Toastr()->success(COUPON_DESTROY_200['message']);
         return back();
     }
 }

@@ -1725,4 +1725,6 @@
   'Revolutionize Your Ride' => 'Revolutionize Your Ride',
   'Aayo Support' => 'Aayo Support',
   'The fcm token field is required.' => 'The fcm token field is required.',
+  'description' => 'Description',
+  'Create a level first' => 'Create a level first',
 );
