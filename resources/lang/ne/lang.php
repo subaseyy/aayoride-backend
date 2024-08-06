@@ -1610,4 +1610,5 @@
   'Trip request is paused.' => 'Trip request is paused.',
   'Trip request is resumed.' => 'Trip request is resumed.',
   'The action field is required.' => 'The action field is required.',
+  'OTP is not matched' => 'OTP is not matched',
 );

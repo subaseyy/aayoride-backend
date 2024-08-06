@@ -1727,6 +1727,9 @@
   'The fcm token field is required.' => 'The fcm token field is required.',
   'description' => 'Description',
   'Create a level first' => 'Create a level first',
+  'coupon not found or not applicable' => 'Coupon not found or not applicable',
+  'You have insufficient loyalty points' => 'You have insufficient loyalty points',
   'The filter field is required.' => 'The filter field is required.',
   'The offset must be a number.' => 'The offset must be a number.',
 );
+
