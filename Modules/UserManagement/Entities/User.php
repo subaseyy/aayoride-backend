@@ -3,6 +3,7 @@
 namespace Modules\UserManagement\Entities;
 
 use App\Traits\HasUuid;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -62,7 +63,7 @@ class User extends Authenticatable
 
     protected static function newFactory()
     {
-        return \Modules\UserManagement\Database\factories\UserFactory::new();
+        return UserFactory::new();
     }
 
     public function scopeUserType($query, $type)
