@@ -5,6 +5,7 @@ namespace Modules\UserManagement\Http\Controllers\Api\Driver;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
+use Modules\TripManagement\Entities\TripRequest;
 use Modules\UserManagement\Entities\TimeTrack;
 use Modules\UserManagement\Interfaces\DriverDetailsInterface;
 
