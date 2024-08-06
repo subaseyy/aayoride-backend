@@ -1727,4 +1727,6 @@
   'The fcm token field is required.' => 'The fcm token field is required.',
   'description' => 'Description',
   'Create a level first' => 'Create a level first',
+  'The filter field is required.' => 'The filter field is required.',
+  'The offset must be a number.' => 'The offset must be a number.',
 );
