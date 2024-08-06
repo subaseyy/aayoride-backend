@@ -1729,3 +1729,4 @@
   'Create a level first' => 'Create a level first',
   'coupon not found or not applicable' => 'Coupon not found or not applicable',
   'You have insufficient loyalty points' => 'You have insufficient loyalty points',
+)
