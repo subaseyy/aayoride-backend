@@ -1731,5 +1731,6 @@
   'You have insufficient loyalty points' => 'You have insufficient loyalty points',
   'The filter field is required.' => 'The filter field is required.',
   'The offset must be a number.' => 'The offset must be a number.',
+  'The destination coordinates field is required.' => 'The destination coordinates field is required.',
+  'The pickup coordinates field is required.' => 'The pickup coordinates field is required.',
 );
-
