@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\TripManagement\Http\Controllers\Api\new\Customer\TripRequestController;
-use Modules\TripManagement\Http\Controllers\Api\new\Driver\TripRequestController as DriverTripController;
+use Modules\TripManagement\Http\Controllers\Api\New\Customer\TripRequestController;
+use Modules\TripManagement\Http\Controllers\Api\New\Driver\TripRequestController as DriverTripController;
 use Modules\TripManagement\Http\Controllers\Api\PaymentController;
 
 /**
