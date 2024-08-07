@@ -143,7 +143,7 @@ const CURRENCIES = [
     ["code" => "NGN", "symbol" => "₦", "name" => "Nigerian naira"],
     ["code" => "NIO", "symbol" => "C$", "name" => "Nicaraguan c\u00f3rdoba"],
     ["code" => "NOK", "symbol" => "kr", "name" => "Norwegian krone"],
-    ["code" => "NPR", "symbol" => "NRs", "name" => "Nepalese rupee"],
+    ["code" => "NPR", "symbol" => "रु", "name" => "Nepalese rupee"],
     ["code" => "NZD", "symbol" => "NZ$", "name" => "New Zealand dollar"],
     ["code" => "OMR", "symbol" => "OMR", "name" => "Omani rial"],
     ["code" => "PAB", "symbol" => "B/.", "name" => "Panamanian balboa"],
